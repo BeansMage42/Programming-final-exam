@@ -89,7 +89,7 @@ public class BallController : MonoBehaviour
     {
         if (other.gameObject.tag == "Diamond")
         {
-            ScoreManager.instance.IncrementScore();
+            ScoreManager.instanceS.IncrementScore();
             Destroy(other.gameObject);
         }
     }

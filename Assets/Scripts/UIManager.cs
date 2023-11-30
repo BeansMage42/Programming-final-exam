@@ -8,24 +8,25 @@ using UnityEngine.SceneManagement;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject startMenu;
-    [SerializeField] private GameObject gameOverMenu;
+    [SerializeField] private  GameObject gameOverMenu;
      
     [SerializeField] private TextMeshProUGUI playScore;
     [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private TextMeshProUGUI currentScore;
 
-    public static UIManager instance;
+    public static UIManager instanceUI;
 
     private void Awake()
     {
-        if (instance == null)
+        if (instanceUI == null)
         {
-            instance = new UIManager();
+            instanceUI = this;
         }
         else
         {
             Destroy(gameObject);
         }
+        
     }
 
     private void Start()
@@ -44,7 +45,10 @@ public class UIManager : MonoBehaviour
 
     public void GameOver()
     {
-        gameOverMenu.SetActive(true);
+        
+         gameOverMenu.SetActive(true);
+        currentScore.text = "Current Score: " + ScoreManager.instanceS.getCurrentScore().ToString();
+        bestScore.text = "Best: " + ScoreManager.instanceS.getHighScore().ToString();
     }
 
 
@@ -62,6 +66,6 @@ public class UIManager : MonoBehaviour
 
     public void UpdateText()
     {
-
+        playScore.text = "Score: " + ScoreManager.instanceS.getCurrentScore().ToString();
     }
 }

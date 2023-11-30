@@ -5,14 +5,14 @@ using UnityEngine;
 public class ScoreManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public static ScoreManager instance;
+    public static ScoreManager instanceS;
     private static int highScore;
     private int currentScore;
     private void Awake()
     {
-        if (instance == null)
+        if (instanceS == null)
         {
-            instance = new ScoreManager();
+            instanceS = this;
         }
         else
         {
@@ -24,6 +24,7 @@ public class ScoreManager : MonoBehaviour
     public void IncrementScore()
     {
         currentScore++;
+        UIManager.instanceUI.UpdateText();
         if(currentScore > highScore)
         {
             highScore = currentScore;
@@ -34,5 +35,9 @@ public class ScoreManager : MonoBehaviour
     {
         return (currentScore);
     }
-        
+       
+    public int getHighScore()
+    {
+        return (highScore);
+    }
 }

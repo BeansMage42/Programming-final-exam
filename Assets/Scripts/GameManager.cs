@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
         {
             if (instance == null)
             {
-                instance = new GameManager();
+                instance = this;
             }
             else
             {
@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
 
 
         }
-
         
+
     }
     void Start()
     {
@@ -44,6 +44,6 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         InputController.GameDisable();
-        UIManager.instance.GameOver();
+        UIManager.instanceUI.GameOver();
     }
 }
