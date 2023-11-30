@@ -22,4 +22,8 @@ public static class InputController
     {
         controls.GameMode.Enable();
     }
+    public static void GameDisable()
+    {
+        controls.GameMode.Disable();
+    }
 }

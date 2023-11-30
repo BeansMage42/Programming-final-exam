@@ -21,7 +21,7 @@ public class BallController : MonoBehaviour
     private void Awake()
     {
         InputController.Init(this);
-        InputController.GameEnable();
+       // InputController.GameEnable();
         rb = GetComponent<Rigidbody>();
         depth = GetComponent<Collider>().bounds.size.y;
 
@@ -38,10 +38,11 @@ public class BallController : MonoBehaviour
     void Update()
     {
         isGrounded = Physics.Raycast(transform.position, Vector3.down, depth, groundLayer);
-        Debug.Log(isGrounded);
+        //Debug.Log(isGrounded);
         if(player.position.y < 0)
         {
-            Debug.Log("die");
+            GameManager.instance.GameOver();
+            //Debug.Log("die");
         }
     }
 
@@ -88,6 +89,7 @@ public class BallController : MonoBehaviour
     {
         if (other.gameObject.tag == "Diamond")
         {
+            ScoreManager.instance.IncrementScore();
             Destroy(other.gameObject);
         }
     }

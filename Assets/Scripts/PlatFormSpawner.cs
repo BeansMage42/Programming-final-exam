@@ -14,6 +14,11 @@ public class PlatFormSpawner : MonoBehaviour
     void Start()
     {
         lastPos = transform.position;
+        
+    }
+
+    public void startGame()
+    {
         Spawn();
     }
 

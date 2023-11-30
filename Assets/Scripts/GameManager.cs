@@ -5,6 +5,26 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Start is called before the first frame update
+
+    public static GameManager instance;
+    [SerializeField ] private PlatFormSpawner spawner;
+    private void Awake()
+    {
+        {
+            if (instance == null)
+            {
+                instance = new GameManager();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+
+
+        }
+
+        
+    }
     void Start()
     {
         
@@ -14,5 +34,16 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void GameStart()
+    {
+        spawner.startGame();
+    }
+
+    public void GameOver()
+    {
+        InputController.GameDisable();
+        UIManager.instance.GameOver();
     }
 }
