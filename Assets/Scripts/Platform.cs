@@ -9,9 +9,14 @@ public class Platform : MonoBehaviour
     [SerializeField] private Transform player;
     private Rigidbody rb;
     private bool usingGravity = false;
+    private Vector3 originalPos;
+    public Quaternion originalRot;
     private void Awake()
     {
+        originalPos = transform.position;
+        originalRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
+        player = GameObject.Find("Ball").GetComponent<Transform>();
     }
     void Start()
     {

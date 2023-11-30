@@ -270,6 +270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1109570540}
+  originalRot: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &427538605
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,6 +280,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 427538606}
+  - component: {fileID: 427538607}
   m_Layer: 0
   m_Name: PlatformSpawner
   m_TagString: Untagged
@@ -295,12 +297,26 @@ Transform:
   m_GameObject: {fileID: 427538605}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 4, y: 0, z: 6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &427538607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 427538605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d69db78915f724d4d9dbc9fce36c2a07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  platformPrefab: {fileID: 6562232777293146417, guid: 26888859758f29c4c9b7d61e1ddd1ef3, type: 3}
+  gemPrefab: {fileID: 9214014990923740308, guid: 5ac9f5916e8bf604bbbd3331f980010b, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +532,7 @@ GameObject:
   - component: {fileID: 1109570542}
   - component: {fileID: 1109570541}
   m_Layer: 0
-  m_Name: ball
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
