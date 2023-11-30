@@ -82,4 +82,14 @@ public class BallController : MonoBehaviour
             moveDir = new Vector3 (1, 0, 0);
         }
     }
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Diamond")
+        {
+            Destroy(other.gameObject);
+        }
+    }
+
 }

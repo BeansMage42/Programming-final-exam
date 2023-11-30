@@ -17,6 +17,7 @@ public class Platform : MonoBehaviour
         originalRot = transform.rotation;
         rb = GetComponent<Rigidbody>();
         player = GameObject.Find("Ball").GetComponent<Transform>();
+        
     }
     void Start()
     {

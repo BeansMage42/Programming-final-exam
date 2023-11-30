@@ -9,6 +9,18 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 983675fabc6803647b899a148d30462a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 983675fabc6803647b899a148d30462a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 983675fabc6803647b899a148d30462a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 983675fabc6803647b899a148d30462a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.3688612
       objectReference: {fileID: 0}
@@ -50,6 +62,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 983675fabc6803647b899a148d30462a, type: 3}
       propertyPath: m_Name
+      value: Diamond
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 983675fabc6803647b899a148d30462a, type: 3}
+      propertyPath: m_TagString
       value: Diamond
       objectReference: {fileID: 0}
     m_RemovedComponents: []
